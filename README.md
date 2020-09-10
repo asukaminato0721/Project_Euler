@@ -1,3 +1,3 @@
-# Project_Eular
+# Project_Euler
 
 ![](https://projecteuler.net/profile/wuyudi.png)
