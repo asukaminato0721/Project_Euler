@@ -1,1 +1,1 @@
-Table[Binomial[i, j], {i, 1, 100}, {j, 1, 100}] // Flatten // Count[u_ /; u > 1*^6]
+Sum[Boole[Binomial[i, j] > 1*^6], {i, 1, 100}, {j, 1, 100}]
