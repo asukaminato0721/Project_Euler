@@ -11,7 +11,7 @@ int main()
             {
                 if (a * a + b * b == c * c)
                 {
-                    cout << a << " " << b << " " << c;
+                    cout << a * b * c;
                     return 0;
                 }
             }
