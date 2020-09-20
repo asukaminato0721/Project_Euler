@@ -1,7 +1,8 @@
-from sympy.ntheory.continued_fraction import continued_fraction_convergents, continued_fraction_iterator
-from sympy.ntheory.digits import digits
-from sympy import E
+from diofant.ntheory.continued_fraction import continued_fraction_convergents, continued_fraction_iterator
+from diofant import E
+from itertools import count
 
-for i, j in zip(range(1, 101), continued_fraction_convergents(continued_fraction_iterator(E))):
+for i, j in zip(count(1), continued_fraction_convergents(continued_fraction_iterator(E))):
     if i == 100:
-        print(sum(digits(j.numerator())[1:]))
+        print(sum(int(k) for k in str(j.numerator)))
+        break
