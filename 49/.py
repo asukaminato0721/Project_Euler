@@ -1,4 +1,4 @@
-from sympy import primerange
+from diofant import primerange
 from itertools import combinations
 prime = set(primerange(1000, 10000))
 for i, k in combinations(prime, 2):
