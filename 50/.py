@@ -1,4 +1,4 @@
-from sympy import primerange, isprime
+from diofant import primerange, isprime
 from collections import defaultdict
 from itertools import accumulate
 from operator import add
@@ -17,4 +17,4 @@ def foo(start=1):
 for k in range(1, 100):
     foo(k)
 
-a = max(num.items(), key=lambda x: x[0])
+print(max(num.items(), key=lambda x: x[0]))
