@@ -1,25 +1,12 @@
 from diofant.ntheory import isprime
-from itertools import chain
 
-solleft = set((2, 3, 5, 7))
-solright = set((2, 3, 5, 7))
-
-
-def conj(num, num1):
-    return int(str(num)+str(num1))
-
-
-def fooleft(n):
-    return set(conj(i, n)for i in range(1, 10) if isprime(conj(i, n)))
-
-
-def fooright(n):
-    return set(conj(n, i)for i in range(1, 10) if isprime(conj(n, i)))
+left, right = {2, 3, 5, 7}, {2, 3, 5, 7}
+range10 = {'', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
 
 
 for _ in range(5):
-    solleft = set(chain.from_iterable(fooleft(i)
-                                      for i in solleft)) | solleft
-    solright = set(chain.from_iterable(fooright(i)
-                                       for i in solright)) | solright
-print(sum(solleft & solright - set((2, 3, 5, 7))))
+    left = {int(str(i)+j) for i in left for j in range10
+            if isprime(int(str(i) + j))}
+    right = {int(j+str(i)) for i in right for j in range10
+             if isprime(int(j + str(i)))}
+print(sum(left & right - {2, 3, 5, 7}))
