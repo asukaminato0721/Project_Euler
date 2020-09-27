@@ -1,17 +1,13 @@
 from diofant.ntheory import primerange, isprime
-from itertools import cycle, islice
 
 
 def foo1(a):
-    return (islice(cycle(str(a)), i, i + len(str(a))) for i in range(len(str(a))))
-
-
-def tonum(a):
-    return int(''.join(a))
+    tmp = len(str(a))
+    return ((str(a)*2)[i: i + tmp] for i in range(tmp))
 
 
 def foo2(a):
-    return (tonum(i) for i in foo1(a))
+    return (int(i) for i in foo1(a))
 
 
 def foo3(a):
