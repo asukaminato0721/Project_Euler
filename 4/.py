@@ -1,1 +1,1 @@
-max(i*j for i in range(100, 1000) for j in range(i, 999) if int(''.join(reversed(str(i*j)))) == i*j)
+print(max(i*j for i in range(100, 1000) for j in range(i, 999) if (k := str(i*j))[::-1] == k))
