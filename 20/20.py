@@ -1,2 +1,8 @@
 from math import factorial
-print(sum(int(i) for i in str(factorial(100))))
+
+
+def main() -> int:
+    return sum(map(int, str(factorial(100))))
+
+
+assert main() == 648

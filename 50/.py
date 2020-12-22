@@ -1,12 +1,12 @@
 from diofant import primerange, isprime
 from collections import defaultdict
 from itertools import accumulate
-from operator import add
+from operator import add, itemgetter
 
 num = defaultdict(int)
 
 
-def foo(start=1):
+def foo(start: int = 1) -> None:
     for i, j in enumerate(accumulate(primerange(start, 100_0000), add)):
         if j > 100_0000:
             break
@@ -14,7 +14,11 @@ def foo(start=1):
             num[i] = j
 
 
-for k in range(1, 100):
-    foo(k)
+[foo(k) for k in range(1, 100)]
 
-print(max(num.items(), key=lambda x: x[0]))
+
+def main() -> int:
+    return max(num.items(), key=itemgetter(0))[-1]
+
+
+assert main() == 997651

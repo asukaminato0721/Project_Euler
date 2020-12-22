@@ -1,3 +1,8 @@
 from diofant.ntheory.partitions_ import npartitions
 
-print(npartitions(100) - 1)
+
+def main() -> int:
+    return npartitions(100) - 1
+
+
+assert main() == 190569291

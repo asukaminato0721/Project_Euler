@@ -1,16 +1,12 @@
-solu89 = set((89,))
-solu1 = set((1,))
+solu89 = {89}
+solu1 = {1}
 
 
-def sqrsum(i):
-    s = 0
-    while i > 0:
-        s += (i % 10)**2
-        i //= 10
-    return s
+def sqrsum(i: int) -> int:
+    return sum(int(i)**2 for i in str(i))
 
 
-def sol(i):
+def sol(i: int):
     temp = [i]
     while True:
         if i in solu89:

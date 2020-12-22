@@ -7,7 +7,7 @@ text = requests.get(
 ).text.replace('\"', "").split(',')
 
 
-def num(a):
+def num(a: str) -> int:
     return ord(a)-ord('A')+1
 
 
