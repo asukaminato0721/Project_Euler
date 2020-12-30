@@ -1,9 +1,9 @@
 # Project_Euler
 
-![](https://github.com/wuyudi/Project_Euler/blob/master/profile/25.png)
+![25](https://github.com/wuyudi/Project_Euler/blob/master/profile/25.png)
 
-![](https://github.com/wuyudi/Project_Euler/blob/master/profile/50.png)
+![50](https://github.com/wuyudi/Project_Euler/blob/master/profile/50.png)
 
 ## TODO
 
-- [ ] Change all `sympy` to `diofant`
+- [x] Change all `sympy` to `diofant`

@@ -1,3 +1,8 @@
-from sympy.ntheory import totient
-import numpy as np
-np.sum(np.frompyfunc(totient, 1, 1)(np.arange(2, 1000_000+1)))
+from diofant.ntheory import totient
+
+
+def main() -> int:
+    return sum(map(totient, range(2, 1000_000 + 1)))
+
+
+assert main() == 303963552391
