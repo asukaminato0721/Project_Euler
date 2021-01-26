@@ -3,7 +3,7 @@ solu1 = {1}
 
 
 def sqrsum(i: int) -> int:
-    return sum(int(i)**2 for i in str(i))
+    return sum(int(i) ** 2 for i in str(i))
 
 
 def sol(i: int):
@@ -22,4 +22,5 @@ def sol(i: int):
 
 for i in range(1, 1000_0000):
     sol(i)
-len(solu89)
+
+assert len(solu89) == 8581146

@@ -1,1 +1,1 @@
-MaximalBy[Range@1*^6, #/EulerPhi[#] &]
+MaximalBy[Range@1*^6, #/EulerPhi[#] &]//Print
