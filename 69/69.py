@@ -1,21 +1,14 @@
-from numba import njit
+import os
+from ctypes import CFUNCTYPE, c_double, c_int
+from pytcc import TCC
 
-
-@njit
-def key(n):
-    def totatives(n):
-        phi = int(n > 1 and n)
-        for p in range(2, int(n ** 0.5) + 1):
-            if not n % p:
-                phi -= phi // p
-                while not n % p:
-                    n //= p
-        # if n is > 1 it means it is prime
-        if n > 1:
-            phi -= phi // n
-        return phi
-
-    return n / totatives(n)
+PATH = os.path.dirname(os.path.abspath(__file__))
+comp = TCC()
+comp.add_library_path("./")
+comp.add_file(os.path.join(PATH, "69.c"))
+comp.relocate()
+key = comp.get_symbol("key")
+key = CFUNCTYPE(c_double, c_int)(key)
 
 
 def main() -> int:

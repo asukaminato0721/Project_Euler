@@ -1,11 +1,8 @@
-#include <assert.h>
 #include <math.h>
-#define ll long long
-#define max(x, y, key) (key(x) > key(y) ? x : y)
-ll totatives(ll n)
+int totatives(int n)
 {
-    ll phi = n;
-    for (ll p = 2LL; p < sqrt(n) + 1; p++)
+    int phi = n;
+    for (int p = 2; p < sqrt(n) + 1; p++)
         if (n % p == 0)
         {
             phi -= phi / p;
@@ -17,16 +14,7 @@ ll totatives(ll n)
         phi -= phi / n;
     return phi;
 }
-long double key(ll n)
+double key(int n)
 {
-    return (long double)n / totatives(n);
-}
-int main()
-{
-    int Max = 0;
-    for (int i = 3; i < 1000001; i++)
-    {
-        Max = max(Max, i, key);
-    }
-    assert(Max == 510510);
+    return (double)n / totatives(n);
 }
