@@ -1,3 +1,4 @@
+// gcc -shared  -s -O2 -DNDEBUG 69.c -o 69.dll
 #include <math.h>
 int totatives(int n)
 {

@@ -1,13 +1,6 @@
-import os
-from ctypes import CFUNCTYPE, c_double, c_int
-from pytcc import TCC
+from ctypes import CDLL, CFUNCTYPE, c_double, c_int
 
-PATH = os.path.dirname(os.path.abspath(__file__))
-comp = TCC()
-comp.add_library_path("./")
-comp.add_file(os.path.join(PATH, "69.c"))
-comp.relocate()
-key = comp.get_symbol("key")
+key = CDLL("./69.dll").key
 key = CFUNCTYPE(c_double, c_int)(key)
 
 

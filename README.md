@@ -8,6 +8,10 @@
 
 - [x] Change all `sympy` to `diofant`
 
+For small projects, ctypes is more convenient than cffi.
+
+---
+
 ## Some other information
 
 This is very useful [pytcc](https://github.com/thgcode/pytcc)
