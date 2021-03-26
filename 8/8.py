@@ -4,7 +4,7 @@ num = "7316717653133062491922511967442657474235534919493496983520312774506326239
 
 
 def main() -> int:
-    return max(prod(map(int, num[i: i + 13])) for i in range(len(num) - 13))
+    return max(prod(map(int, num[i : i + 13])) for i in range(len(num) - 13))
 
 
 assert main() == 23514624000

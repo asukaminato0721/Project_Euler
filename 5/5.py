@@ -1,9 +1,8 @@
-from math import gcd
-from functools import reduce
+from math import lcm
 
 
 def main() -> int:
-    return reduce(lambda x, y: x*y//gcd(x, y), range(1, 21), 1)
+    return lcm(*range(1, 21))
 
 
 assert main() == 232792560

@@ -3,7 +3,7 @@ from diofant.ntheory import primerange, isprime
 
 def foo1(a: int):
     tmp = len(str(a))
-    return (f'{a}{a}'[i: i + tmp] for i in range(tmp))
+    return (f"{a}{a}"[i : i + tmp] for i in range(tmp))
 
 
 def foo2(a: int):

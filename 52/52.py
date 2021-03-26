@@ -6,7 +6,7 @@ def iff(n: int) -> bool:
 
 
 def main() -> int:
-    return (next(i for i in count(1) if iff(i)))
+    return next(i for i in count(1) if iff(i))
 
 
 assert main() == 142857

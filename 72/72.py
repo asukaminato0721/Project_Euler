@@ -1,11 +1,12 @@
-from ctypes import CDLL, CFUNCTYPE, c_int
+from cffi import FFI
 
-totatives = CDLL("./72.dll").totatives
-totatives = CFUNCTYPE(c_int, c_int)(totatives)
+ffi = FFI()
+ffi.cdef("int totatives(int n);")
+lib = ffi.dlopen("./72.dll")
 
 
 def main() -> int:
-    return sum(map(totatives, range(2, 1000_000 + 1)))
+    return sum(map(lib.totatives, range(2, 1000_000 + 1)))
 
 
 assert main() == 303963552391

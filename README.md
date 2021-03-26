@@ -8,7 +8,26 @@
 
 - [x] Change all `sympy` to `diofant`
 
-For small projects, ctypes is more convenient than cffi.
+cffi is better than ctypes.
+
+### cffi
+
+```py
+from cffi import FFI
+
+ffi = FFI()
+ffi.cdef("double key(int n);")
+lib = ffi.dlopen("./69.dll")
+```
+
+### ctypes
+
+```py
+from ctypes import CDLL, CFUNCTYPE, c_double, c_int
+
+key = CDLL("./69.dll").key
+key = CFUNCTYPE(c_double, c_int)(key)
+```
 
 ---
 

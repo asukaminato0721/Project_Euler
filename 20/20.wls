@@ -1,1 +1,2 @@
-100! // ToString // StringSplit[#, ""] & // ToExpression // Total
+On@Assert;
+(100! // IntegerDigits // Total) == 648 //Assert

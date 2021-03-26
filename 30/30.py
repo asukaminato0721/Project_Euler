@@ -1,5 +1,5 @@
 def iff(n: int) -> bool:
-    return sum(int(i)**5 for i in str(n)) == n
+    return sum(int(i) ** 5 for i in str(n)) == n
 
 
 def main() -> int:

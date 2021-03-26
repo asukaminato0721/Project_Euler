@@ -3,7 +3,7 @@ def sumdig(num: int) -> int:
 
 
 def main() -> int:
-    return max(sumdig(i**j) for i in range(1, 100) for j in range(1, 100))
+    return max(sumdig(i ** j) for i in range(1, 100) for j in range(1, 100))
 
 
 assert main() == 972

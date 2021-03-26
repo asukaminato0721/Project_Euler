@@ -2,7 +2,7 @@ string = "37107287533902102798797998220837590246510135740250 4637693767749000971
 
 
 def main() -> str:
-    return (str(sum(map(int, string.split())))[:10])
+    return str(sum(map(int, string.split())))[:10]
 
 
 assert int(main()) == 5537376230

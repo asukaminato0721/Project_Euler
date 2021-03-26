@@ -1,11 +1,12 @@
-from ctypes import CDLL, CFUNCTYPE, c_double, c_int
+from cffi import FFI
 
-key = CDLL("./69.dll").key
-key = CFUNCTYPE(c_double, c_int)(key)
+ffi = FFI()
+ffi.cdef("double key(int n);")
+lib = ffi.dlopen("./69.dll")
 
 
 def main() -> int:
-    return max(range(3, 1000_000 + 1), key=key)
+    return max(range(3, 1000_000 + 1), key=lib.key)
 
 
 assert main() == 510510
