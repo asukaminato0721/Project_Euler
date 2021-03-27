@@ -3,7 +3,7 @@
 using namespace std;
 #define all(x) x.begin(), x.end()
 using ll = long long;
-set<int> solu89 = {89}, solu1 = {1};
+unordered_set<int> solu89 = {89}, solu1 = {1};
 int sqrsum(int i)
 {
     int s = 0;
