@@ -1,9 +1,13 @@
+const assert = require("assert").strict;
+
 function main() {
   function foo(a, b, c) {
-    let arr = [...new Set(`${a}${b}${c}`)];
-    arr.sort();
+    let array1 = [...new Set(`${a}${b}${c}`)].map((x) => Number(x));
+    array1.sort();
+    let array2 = [...Array(10).keys()].filter((x) => x > 0);
     return (
-      arr.toString() === [...Array(10).keys()].filter((x) => x > 0).toString()
+      array1.length === array2.length &&
+      array1.every((value, index) => value === array2[index])
     );
   }
   function _main() {
@@ -19,4 +23,4 @@ function main() {
   }
   return _main();
 }
-console.assert(main(), 45228);
+assert.equal(main(), 45228);

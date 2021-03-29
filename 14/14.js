@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   let sol = new Map();
   let maxi = 0,
@@ -30,4 +32,4 @@ function main() {
   }
   return maxi;
 }
-console.assert(main(), 837799);
+assert.equal(main(), 837799);

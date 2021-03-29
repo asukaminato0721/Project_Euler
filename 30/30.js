@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   function iff(n) {
     return (
@@ -7,4 +9,4 @@ function main() {
   }
   return [...Array(1000000).keys()].filter(iff).reduce((a, b) => a + b);
 }
-console.assert(main(), 443839);
+assert.equal(main(), 443839);

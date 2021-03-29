@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   function totatives(n) {
     let phi = n;
@@ -17,4 +19,4 @@ function main() {
     .filter((x) => x >= 3)
     .reduce((a, b) => (key(a) > key(b) ? a : b));
 }
-console.assert(main(), 510510);
+assert.equal(main(), 510510);

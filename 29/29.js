@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   let res = new Set();
   for (let i = 2; i < 101; i++) {
@@ -7,4 +9,4 @@ function main() {
   }
   return res.size;
 }
-console.assert(main(), 9183);
+assert.equal(main(), 9183);

@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   function* t() {
     for (let i = 100; i < 1000; i++) {
@@ -13,4 +15,4 @@ function main() {
   return Math.max(...t());
 }
 
-console.assert(main(), 906609);
+assert.equal(main(), 906609);

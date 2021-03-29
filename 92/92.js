@@ -1,3 +1,5 @@
+const assert = require("assert").strict;
+
 function main() {
   let solu89 = new Set([89]);
   let solu1 = new Set([1]);
@@ -33,4 +35,4 @@ function main() {
   }
   return _main();
 }
-console.assert(main(), 8581146);
+assert.equal(main(), 8581146);

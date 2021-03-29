@@ -1,3 +1,4 @@
+const assert = require("assert").strict;
 function main() {
   function* fib() {
     let a = 0,
@@ -11,4 +12,4 @@ function main() {
   }
   return [...fib()].reduce((a, b) => a + b);
 }
-console.assert(main(), 4613732);
+assert.equal(main(), 4613732);
